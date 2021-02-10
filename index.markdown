@@ -12,9 +12,7 @@ layout: home
       {{ site.office }}
     </div>
     <p class="lead mb-5">
-    I am an Assistant Professor in the <a href="https://linguistics.as.uky.edu/" target="_blank">Linguistics Department</a> at the <a href="https://www.as.uky.edu/" target="_blank">University
-  of Kentucky</a>. My interests within linguistics are sociolinguistics, variation
-  and change, phonetics, and phonology.
+    I am an Assistant Professor in the <a href="https://linguistics.as.uky.edu/" target="_blank">Linguistics Department</a> at the <a href="https://www.as.uky.edu/" target="_blank">University of Kentucky</a>. My interests within linguistics are sociolinguistics, variation and change, phonetics, and phonology.
     </p>
     <div class="social-icons">
       <a class="social-icon" href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i></a>
