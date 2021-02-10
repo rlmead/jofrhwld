@@ -1,13 +1,11 @@
 title: Josef Fruehwald
 email: josef.fruehwald@uky.edu
-description: >-
-  I am an Assistant Professor in the Linguistics Department at the University
-  of Kentucky. My interests within linguistics are sociolinguistics, variation
-  and change, phonetics, and phonology.
+office: "1671 Patterson Office Tower"
 baseurl: ""
 url: "http://jofrhwld.github.io/"
 twitter_username: jofrhwld
 github_username:  jofrhwld
+instagram_username:  jofrhwld
 
 # Build settings
 theme: minima
