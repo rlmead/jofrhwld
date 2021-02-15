@@ -10,8 +10,7 @@
     {% if paper.author.size > 1 %}
     {% for author in paper.author %}
       {% if author.url != null %}
-        <a href = "{{author.url}}" target="_blank">{{ author.name }}{% if forloop.rindex > 2 %}, {% elsif forloop.rindex == 2 %} and {% endif %}
-  </a>
+        <a href = "{{author.url}}" target="_blank">{{ author.name }}</a>{% if forloop.rindex > 2 %}, {% elsif forloop.rindex == 2 %} and {% endif %}
       {% else %}
         {{ author.name }}{% if forloop.rindex > 2 %}, {% elsif forloop.rindex == 2 %} and {% endif %}
       {% endif %}
