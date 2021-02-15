@@ -1,0 +1,40 @@
+{% for paper in site.posts %}
+  {% if paper.title == "Phonological Involvement in Phonetic Change" and paper.year == 2013 %}
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+    <h4 class="text-primary" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#{{paper.title | replace: ' ', '-'}}">
+      {{ paper.title }}
+    </h4>
+
+    <div class="modal fade" id="{{paper.title | replace: ' ', '-'}}" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title my-auto">Abstract: {{ paper.title }}</h5>
+            <button class="btn-secondary rounded my-auto" data-bs-dismiss="modal">X</button>
+          </div>
+          <div class="modal-body">
+            {{ paper.abstract }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">
+        {% if paper.docs.size > 0 %}
+        {% for doc in paper.docs %}
+        {% if doc.local == true %}
+        <a href="{{doc.url | prepend: site.baseurl }}" class="text-white" style="text-decoration: none">
+          {% else %}
+          <a href="{{doc.url}}" class="text-white" style="text-decoration: none">
+            {% endif %}
+            Read Paper</a>
+          {% endfor %}
+          {% endif %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="flex-shrink-0"><span class="text-primary">{{ paper.year }}</span></div>
+    </div>
+  {% endif %}
+{% endfor %}
