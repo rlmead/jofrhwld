@@ -1,12 +1,12 @@
 {% assign current_year = 0 %}
 {% assign loop_index = 0 %}
 {% for paper in site.posts %}
-	{% if paper.categories contains "rpaper" %}
+  {% if paper.categories contains pub_type %}
     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-		<div class="flex-grow-1">
-	  <h4 class="text-primary" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#{{paper.title | replace: ' ', '-' | replace: ',', '' | replace: ':', '' | replace: '<i>', '' | replace: '</i>', '' | replace: "'", '' | replace: '.', ''}}-{{loop_index}}">
-		{{ paper.title }}
-	  </h4>
+    <div class="flex-grow-1">
+    <h4 class="text-primary" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#{{paper.title | replace: ' ', '-' | replace: ',', '' | replace: ':', '' | replace: '<i>', '' | replace: '</i>', '' | replace: "'", '' | replace: '.', '' | replace: '/', '' | replace: '?', '' | replace: '(', '' | replace: ')', '' | replace: '&', ''}}-{{loop_index}}">
+    {{ paper.title }}
+    </h4>
     {% if paper.author.size > 1 %}
     {% for author in paper.author %}
       {% if author.url != null %}
@@ -46,37 +46,38 @@
       <br>
   {% endif %}
 
-  
-	  <div class="modal fade" id="{{paper.title | replace: ' ', '-' | replace: ',', '' | replace: ':', '' | replace: '<i>', '' | replace: '</i>', '' | replace: "'", '' | replace: '.', ''}}-{{loop_index}}" tabindex="-1" aria-hidden="true">
-		<div class="modal-dialog">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title my-auto">Abstract: {{ paper.title }}</h5>
-			  <button class="btn-secondary rounded my-auto" data-bs-dismiss="modal">X</button>
-			</div>
-			<div class="modal-body">
-			  {{ paper.abstract }}
-			</div>
-			<div class="modal-footer">
+    <div class="modal fade" id="{{paper.title | replace: ' ', '-' | replace: ',', '' | replace: ':', '' | replace: '<i>', '' | replace: '</i>', '' | replace: "'", '' | replace: '.', '' | replace: '/', '' | replace: '?', '' | replace: '(', '' | replace: ')', '' | replace: '&', ''}}-{{loop_index}}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title my-auto">{{ paper.title }}</h5>
+        <button class="btn-secondary rounded my-auto" data-bs-dismiss="modal">X</button>
+      </div>
+      {% if paper.abstract != null %}
+        <div class="modal-body">
+          {{ paper.abstract }}
+        </div>
+      {% endif %}
+      <div class="modal-footer">
         {% if paper.docs.size > 0 %}
         {% for doc in paper.docs %}
         <button type="button" class="btn btn-primary">
         {% if doc.local == true %}
         <a href="{{doc.url | prepend: site.baseurl }}" class="text-white" style="text-decoration: none" target="_blank">
-			{% else %}
-			<a href="{{doc.url}}" class="text-white" style="text-decoration: none" target="_blank">
-			  {% endif %}
-			  {{doc.format}}</a>
+      {% else %}
+      <a href="{{doc.url}}" class="text-white" style="text-decoration: none" target="_blank">
+        {% endif %}
+        {{doc.format}}</a>
       </button>
-			{% endfor %}
-			{% endif %}
-			</div>
-		  </div>
-		</div>
-	  </div>
-		</div>
-		<div class="flex-shrink-0"><span class="text-primary">{{ paper.year }}</span></div>
-	  </div>
-		{% assign loop_index = loop_index | plus:1 %}
+      {% endfor %}
+      {% endif %}
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="flex-shrink-0"><span class="text-primary">{{ paper.year }}</span></div>
+    </div>
+    {% assign loop_index = loop_index | plus:1 %}
     {% endif %}
   {% endfor %}
