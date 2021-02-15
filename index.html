@@ -31,8 +31,24 @@ layout: home
   <div class="resume-section-content">
     <h2 class="mb-5">Research</h2>
     <h3>Papers</h3>
+    {% assign pub_type = "rpaper"%}
     {% include pub_sections %}
     <h3>Dissertation</h3>
     {% include diss_sections %}
+    <h3>Conference Talks and Presentations</h3>
+    {% assign pub_type = "talk"%}
+    {% include pub_sections %}
+    <h3>Invited Talks</h3>
+    {% assign pub_type = "italk"%}
+    {% include pub_sections %}
+  </div>
+</section>
+
+<section class="resume-section" id="teaching">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Teaching</h2>
+    <h3>Workshops</h3>
+    {% assign pub_type = "workshop"%}
+    {% include pub_sections %}
   </div>
 </section>
