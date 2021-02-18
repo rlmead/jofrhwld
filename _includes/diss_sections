@@ -34,7 +34,7 @@
       </div>
     </div>
       </div>
-      <div class="flex-shrink-0"><span class="text-primary">{{ paper.year }}</span></div>
+      <div class="flex-shrink-0"><span class="text-secondary">{{ paper.year }}</span></div>
     </div>
   {% endif %}
 {% endfor %}
