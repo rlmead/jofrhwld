@@ -27,6 +27,40 @@ layout: home
   </div>
 </section>
 
+<section class="resume-section" id="links">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Links</h2>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+        <h4 class="text-primary" style="cursor: pointer">
+          <a href="teaching/courses/2017_lsa/">LSA 2017 R course materials</a>
+        </h4>
+      </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+        <h4 class="text-primary" style="cursor: pointer">
+          <a href="rstudy/index.html">R Study Group</a>
+        </h4>
+      </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+        <h4 class="text-primary" style="cursor: pointer">
+          <a href="phillymotion.html">Philadelphia Language in Motion</a>
+        </h4>
+      </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="flex-grow-1">
+        <h4 class="text-primary" style="cursor: pointer">
+          <a href="workshops/2019_dataviz/">2019 Data Visualization Workshop</a>
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="resume-section" id="projects">
   <div class="resume-section-content">
     <h2 class="mb-5">Projects</h2>
@@ -117,6 +151,7 @@ layout: home
           data-bs-parent="#accordionTeaching">
           <div class="accordion-body">
             {% assign pub_type = "workshop"%}
+            {% assign featured = false%}
             {% include pub_sections %}
           </div>
         </div>
