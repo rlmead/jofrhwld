@@ -27,13 +27,21 @@ layout: home
   </div>
 </section>
 
+<section class="resume-section" id="projects">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Projects</h2>
+    {% assign pub_type = "project"%}
+    {% include pub_sections %}
+  </div>
+</section>
+
 <section class="resume-section" id="research">
   <div class="resume-section-content">
     <h2 class="mb-5">Research</h2>
     <div class="accordion accordion-flush" id="accordionResearch">
       <div class="accordion-item">
-        <h3 class="accordion-header accordion-button collapsed" id="research-headingOne"
-          style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#research-collapseOne" aria-expanded="false"
+        <h3 class="accordion-header accordion-button collapsed" id="research-headingOne" style="cursor:pointer"
+          data-bs-toggle="collapse" data-bs-target="#research-collapseOne" aria-expanded="false"
           aria-controls="research-collapseOne">
           <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
           Papers
@@ -46,64 +54,67 @@ layout: home
           </div>
         </div>
         <div class="accordion-item">
-          <h3 class="accordion-header accordion-button collapsed" id="research-headingTwo"
-            style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#research-collapseTwo"
-            aria-expanded="false" aria-controls="research-collapseTwo">
+          <h3 class="accordion-header accordion-button collapsed" id="research-headingTwo" style="cursor:pointer"
+            data-bs-toggle="collapse" data-bs-target="#research-collapseTwo" aria-expanded="false"
+            aria-controls="research-collapseTwo">
+            <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
+            Conference Talks and Presentations
+          </h3>
+          <div id="research-collapseTwo" class="accordion-collapse collapse" aria-labelledby="research-headingTwo"
+            data-bs-parent="#accordionResearch">
+            <div class="accordion-body">
+              {% assign pub_type = "talk"%}
+              {% include pub_sections %}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header accordion-button collapsed" id="research-headingThree" style="cursor:pointer"
+            data-bs-toggle="collapse" data-bs-target="#research-collapseThree" aria-expanded="false"
+            aria-controls="research-collapseThree">
+            <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
+            Invited Talks
+          </h3>
+          <div id="research-collapseThree" class="accordion-collapse collapse" aria-labelledby="research-headingThree"
+            data-bs-parent="#accordionResearch">
+            <div class="accordion-body">
+              {% assign pub_type = "italk"%}
+              {% include pub_sections %}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header accordion-button collapsed" id="research-headingFour" style="cursor:pointer"
+            data-bs-toggle="collapse" data-bs-target="#research-collapseFour" aria-expanded="false"
+            aria-controls="research-collapseFour">
             <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
             Dissertation
           </h3>
-          <div id="research-collapseTwo" class="accordion-collapse collapse" aria-labelledby="research-headingTwo"
+          <div id="research-collapseFour" class="accordion-collapse collapse" aria-labelledby="research-headingFour"
             data-bs-parent="#accordionResearch">
             <div class="accordion-body">
               {% include diss_sections %}
             </div>
           </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header accordion-button collapsed" id="research-headingThree"
-              style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#research-collapseThree"
-              aria-expanded="false" aria-controls="research-collapseThree">
-              <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
-              Conference Talks and Presentations
-            </h3>
-            <div id="research-collapseThree" class="accordion-collapse collapse" aria-labelledby="research-headingThree"
-              data-bs-parent="#accordionResearch">
-              <div class="accordion-body">
-                {% assign pub_type = "talk"%}
-                {% include pub_sections %}
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="accordion-header accordion-button collapsed" id="research-headingFour"
-                style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#research-collapseFour"
-                aria-expanded="false" aria-controls="research-collapseFour">
-                <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
-                Invited Talks
-              </h3>
-              <div id="research-collapseFour" class="accordion-collapse collapse" aria-labelledby="research-headingFour"
-                data-bs-parent="#accordionResearch">
-                <div class="accordion-body">
-                  {% assign pub_type = "italk"%}
-                  {% include pub_sections %}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="resume-section" id="teaching">
   <div class="resume-section-content">
     <h2 class="mb-5">Teaching</h2>
-    <div class="accordion accordion-flush" id="accordionResearch">
+    <div class="accordion accordion-flush" id="accordionTeaching">
       <div class="accordion-item">
-        <h3 class="accordion-header accordion-button collapsed" id="research-headingOne"
-          style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#research-collapseOne" aria-expanded="false"
-          aria-controls="research-collapseOne">
+        <h3 class="accordion-header accordion-button collapsed" id="teaching-headingOne" style="cursor:pointer"
+          data-bs-toggle="collapse" data-bs-target="#teaching-collapseOne" aria-expanded="false"
+          aria-controls="teaching-collapseOne">
           <i class="fas fa-ellipsis-h mr-4 text-primary"></i>
           Workshops
         </h3>
-        <div id="research-collapseOne" class="accordion-collapse collapse" aria-labelledby="research-headingOne"
-          data-bs-parent="#accordionResearch">
+        <div id="teaching-collapseOne" class="accordion-collapse collapse" aria-labelledby="teaching-headingOne"
+          data-bs-parent="#accordionTeaching">
           <div class="accordion-body">
             {% assign pub_type = "workshop"%}
             {% include pub_sections %}
